@@ -19,6 +19,7 @@ export default makeStyles((theme) => ({
     color: 'white',
     textDecoration: 'none',
     display: 'block',
+    marginRight: '5rem',
 
     '&:hover': {
       borderBottom: '2px solid white',
