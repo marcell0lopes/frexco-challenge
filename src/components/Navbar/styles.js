@@ -7,22 +7,26 @@ export default makeStyles((theme) => ({
 
   toolbar: {
     display: 'flex',
-    justifyContent: 'center',
+    justifyContent: 'space-between',
   },
-
+  navLogo: {
+    color: 'white',
+    textDecoration: 'none',
+    fontWeight: 'bold',
+    marginLeft: '5rem',
+  },
   navLink: {
     color: 'white',
     textDecoration: 'none',
     display: 'block',
-    marginRight: '20rem',
+
     '&:hover': {
       borderBottom: '2px solid white',
     },
   },
 
   cartIcon: {
-    display: 'block',
-    color: 'rgba(255,255,255,0.8)',
+    marginRight: '5rem',
   },
 
   grow: {

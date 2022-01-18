@@ -20,6 +20,15 @@ const Navbar = () => {
       <AppBar className={classes.navBar} position="static" color="primary">
         <Toolbar className={classes.toolbar}>
           <Typography
+            className={classes.navLogo}
+            component={Link}
+            to="/"
+            variant="h4"
+            sx={{ flexGrow: 1 }}
+          >
+            Frexco
+          </Typography>
+          <Typography
             className={classes.navLink}
             component={Link}
             to="/"
@@ -34,9 +43,10 @@ const Navbar = () => {
                 component={Link}
                 to="/cart"
                 aria-label="Show cart items"
+                className={classes.cartIcon}
               >
                 <Badge badgeContent={4} color="secondary">
-                  <ShoppingCartIcon className={classes.cartIcon} />
+                  <ShoppingCartIcon />
                 </Badge>
               </IconButton>
             </div>
