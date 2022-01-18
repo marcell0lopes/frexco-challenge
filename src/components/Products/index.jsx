@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Grid, Typography } from '@material-ui/core';
-// import { products } from '../../lib/seeds';
+import { Grid } from '@material-ui/core';
+
 import useStyles from './styles.js';
 import Product from '../Product';
 
