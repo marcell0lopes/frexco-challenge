@@ -4,13 +4,14 @@ import Products from '../../components/Products';
 import Cart from '../../components/Cart';
 import { theme } from './theme';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { ThemeProvider, Container } from '@material-ui/core';
+import { ThemeProvider, Container, Typography } from '@material-ui/core';
 
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <Router>
         <Navbar />
+
         <Container>
           <Routes>
             <Route exact path="/" element={<Products />} />
