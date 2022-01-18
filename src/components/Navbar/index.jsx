@@ -32,7 +32,7 @@ const Navbar = () => {
             className={classes.navLink}
             component={Link}
             to="/"
-            variant="h6"
+            variant="subtitle1"
             sx={{ flexGrow: 1 }}
           >
             Produtos

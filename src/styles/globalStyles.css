@@ -3,3 +3,8 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+#root {
+  background: #e7ebf0;
+  min-height: 100vh;
+}
