@@ -6,7 +6,6 @@ import {
   Typography,
   IconButton,
   Badge,
-  Container,
 } from '@material-ui/core';
 import { Link, useLocation } from 'react-router-dom';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
