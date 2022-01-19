@@ -13,7 +13,7 @@ import useStyles from './styles.js';
 
 const CartItem = ({ item }) => {
   const classes = useStyles();
-  const { handleRemoveItemFromCart, handleAddItemToCart } =
+  const { handleRemoveItemFromCart, sumItemQty, handleAddItemToCart } =
     useContext(CartContext);
   return (
     <Card className={classes.cartItem}>
@@ -24,7 +24,7 @@ const CartItem = ({ item }) => {
         </Typography>
       </CardContent>
       <CardActions>
-        <IconButton onClick={() => handleAddItemToCart(item)}>
+        <IconButton onClick={() => sumItemQty(item)}>
           <Add />
         </IconButton>
         <IconButton onClick={() => handleRemoveItemFromCart(item)}>

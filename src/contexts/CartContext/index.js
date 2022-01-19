@@ -7,17 +7,16 @@ export const CartProvider = ({ children }) => {
 
   function handleAddItemToCart(item) {
     const newCart = cart;
-    let itemInCart = newCart.find((i) => i.id === item.id);
 
-    if (!itemInCart) {
-      item.qty = 1;
-      newCart.push(item);
-      setCart([...newCart]);
-    } else {
-      itemInCart.qty++;
-      setCart([...newCart, { ...itemInCart, qty: itemInCart.qty++ }]);
-    }
-    console.log(cart);
+    item.qty = 1;
+    newCart.push(item);
+    setCart([...newCart]);
+  }
+
+  function sumItemQty(item) {
+    const newCart = cart;
+    item.qty++;
+    setCart([...newCart]);
   }
 
   function handleRemoveItemFromCart(item) {
@@ -38,7 +37,13 @@ export const CartProvider = ({ children }) => {
 
   return (
     <CartContext.Provider
-      value={{ cart, handleAddItemToCart, handleRemoveItemFromCart, clearCart }}
+      value={{
+        cart,
+        handleAddItemToCart,
+        handleRemoveItemFromCart,
+        clearCart,
+        sumItemQty,
+      }}
     >
       {children}
     </CartContext.Provider>
