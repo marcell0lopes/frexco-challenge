@@ -21,7 +21,7 @@ export const CartProvider = ({ children }) => {
 
   function handleRemoveItemFromCart(item) {
     let newCart = cart;
-    const exist = newCart.find((item) => item);
+    const exist = newCart.find((i) => i.id === item.id);
     if (exist.qty > 1) {
       exist.qty = exist.qty - 1;
       setCart([...newCart]);
