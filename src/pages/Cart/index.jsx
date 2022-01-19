@@ -16,6 +16,7 @@ import CartItem from '../../components/CartItem/index.jsx';
 const Cart = () => {
   const classes = useStyles();
   const { cart, clearCart } = useContext(CartContext);
+
   return (
     <main className={classes.content}>
       <div className={classes.toolbar} />

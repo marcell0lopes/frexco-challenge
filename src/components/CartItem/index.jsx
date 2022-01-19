@@ -19,14 +19,15 @@ const CartItem = ({ item }) => {
     <Card className={classes.cartItem}>
       <CardContent>
         <Typography className={classes.itemName}>
-          {item.name} {item.qty && ('x', item.qty)}
+          {item.name}{' '}
+          <span className={classes.itemQty}>{item.qty && `x ${item.qty}`}</span>
         </Typography>
       </CardContent>
       <CardActions>
-        <IconButton onClick={() => handleAddItemToCart(item.id, item.name)}>
+        <IconButton onClick={() => handleAddItemToCart(item)}>
           <Add />
         </IconButton>
-        <IconButton onClick={() => handleRemoveItemFromCart(item.id)}>
+        <IconButton onClick={() => handleRemoveItemFromCart(item)}>
           <Remove />
         </IconButton>
       </CardActions>

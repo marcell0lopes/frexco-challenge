@@ -55,9 +55,7 @@ const Product = ({ product }) => {
         <Button className={classes.showButton} onClick={toggleShowValues}>
           {!nutritionVisibility ? '+' : '-'} Nutrition Values
         </Button>
-        <IconButton
-          onClick={() => handleAddItemToCart(product.id, product.name)}
-        >
+        <IconButton onClick={() => handleAddItemToCart(product)}>
           <AddShoppingCart color="primary" />
         </IconButton>
       </CardActions>

@@ -5,23 +5,31 @@ export const CartContext = createContext({});
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
-  function handleAddItemToCart(id, name) {
-    const exist = cart.find((name) => name);
+  function handleAddItemToCart(item) {
+    const newCart = cart;
+    let itemInCart = newCart.find((i) => i.id === item.id);
 
-    if (exist) {
-      const itemObject = { id, name, qty: exist.qty + 1 };
-      setCart([...cart, itemObject]);
+    if (!itemInCart) {
+      item.qty = 1;
+      newCart.push(item);
+      setCart([...newCart]);
     } else {
-      const itemObject = { id, name, qty: 1 };
-      setCart([...cart, itemObject]);
+      itemInCart.qty++;
+      setCart([...newCart, { ...itemInCart, qty: itemInCart.qty++ }]);
     }
+    console.log(cart);
   }
 
-  function handleRemoveItemFromCart(clickedItemIndex) {
-    const filteredCart = cart.filter(
-      (cartItem) => cart.indexOf(cartItem) !== clickedItemIndex
-    );
-    setCart(filteredCart);
+  function handleRemoveItemFromCart(item) {
+    let newCart = cart;
+    const exist = newCart.find((item) => item);
+    if (exist.qty > 1) {
+      exist.qty = exist.qty - 1;
+      setCart([...newCart]);
+    } else {
+      newCart = cart.filter((i) => i !== item);
+      setCart([...newCart]);
+    }
   }
 
   function clearCart() {

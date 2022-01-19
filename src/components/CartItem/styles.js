@@ -10,4 +10,7 @@ export default makeStyles(() => ({
     justifyContent: 'space-between',
     maxWidth: '250px',
   },
+  itemQty: {
+    color: '#03a9f4',
+  },
 }));

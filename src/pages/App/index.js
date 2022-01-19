@@ -25,6 +25,7 @@ const App = () => {
       <CartProvider>
         <Router>
           <Navbar />
+          <Cart products={products} />
           <Container>
             <Routes>
               <Route
