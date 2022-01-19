@@ -6,6 +6,7 @@ import {
   Typography,
   IconButton,
   Badge,
+  Container,
 } from '@material-ui/core';
 import { Link, useLocation } from 'react-router-dom';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
@@ -31,15 +32,26 @@ const Navbar = () => {
           >
             Frexco
           </Typography>
-          <Typography
-            className={classes.navLink}
-            component={Link}
-            to="/"
-            variant="subtitle1"
-            sx={{ flexGrow: 1 }}
-          >
-            Produtos
-          </Typography>
+          <div className={classes.navLinks}>
+            <Typography
+              className={classes.navLink}
+              component={Link}
+              to="/"
+              variant="subtitle1"
+              sx={{ flexGrow: 1 }}
+            >
+              Produtos
+            </Typography>
+            <Typography
+              className={classes.navLink}
+              component={Link}
+              to="/cart"
+              variant="subtitle1"
+              sx={{ flexGrow: 1 }}
+            >
+              Shopping Cart
+            </Typography>
+          </div>
           {location.pathname === '/' && (
             <div>
               <IconButton

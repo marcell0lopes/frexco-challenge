@@ -15,6 +15,12 @@ export default makeStyles((theme) => ({
     fontWeight: 'bold',
     marginLeft: '5rem',
   },
+  navLinks: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
   navLink: {
     color: 'white',
     textDecoration: 'none',

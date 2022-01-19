@@ -4,7 +4,7 @@ import Products from '../../components/Products';
 import Cart from '../Cart';
 import { theme } from './theme';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { ThemeProvider, Container } from '@material-ui/core';
+import { ThemeProvider, Container, Button, Box } from '@material-ui/core';
 import { CartProvider } from '../../contexts/CartContext';
 
 const App = () => {
