@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {
   AppBar,
   Box,
@@ -10,10 +10,13 @@ import {
 import { Link, useLocation } from 'react-router-dom';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import useStyles from './styles';
+import { CartContext } from '../../contexts/CartContext';
 
 const Navbar = () => {
   const classes = useStyles();
   const location = useLocation();
+
+  const { cart } = useContext(CartContext);
 
   return (
     <Box m={0} sx={{ flexGrow: 1 }}>
@@ -45,7 +48,7 @@ const Navbar = () => {
                 aria-label="Show cart items"
                 className={classes.cartIcon}
               >
-                <Badge badgeContent={4} color="secondary">
+                <Badge badgeContent={cart.length} color="secondary">
                   <ShoppingCartIcon />
                 </Badge>
               </IconButton>

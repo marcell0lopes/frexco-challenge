@@ -4,25 +4,14 @@ import { Grid, Typography } from '@material-ui/core';
 import useStyles from './styles.js';
 import Product from '../Product';
 
-const Products = () => {
-  const [products, setProducts] = useState([]);
+const Products = ({ products }) => {
   const classes = useStyles();
-
-  const fetchProduct = async () => {
-    const response = await fetch('https://www.fruityvice.com/api/fruit/all');
-    const data = await response.json();
-    setProducts(data);
-  };
-
-  useEffect(() => {
-    fetchProduct();
-  }, []);
 
   return (
     <main className={classes.content}>
       <div className={classes.toolbar} />
       {!products.length && (
-        <Typography variant="h4" align="center">
+        <Typography variant="h6" align="center">
           Loading Products...
         </Typography>
       )}

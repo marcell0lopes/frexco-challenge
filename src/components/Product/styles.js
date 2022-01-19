@@ -1,5 +1,5 @@
 import { makeStyles } from '@material-ui/core';
-import { theme } from '../../pages/Home/theme';
+import { theme } from '../../pages/App/theme';
 
 export default makeStyles(() => ({
   familyName: {

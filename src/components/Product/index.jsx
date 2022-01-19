@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import {
   Card,
   CardActions,
@@ -9,6 +9,7 @@ import {
 } from '@material-ui/core';
 import useStyles from './styles.js';
 import { AddShoppingCart } from '@material-ui/icons';
+import { CartContext } from '../../contexts/CartContext';
 
 const Product = ({ product }) => {
   const [nutritionVisibility, setNutritionVisibility] = useState(false);
@@ -18,6 +19,8 @@ const Product = ({ product }) => {
     setNutritionVisibility(!nutritionVisibility);
   };
 
+  const { handleAddItemToCart } = useContext(CartContext);
+
   return (
     <Card sx={{ minWidth: 275 }}>
       <CardContent>
@@ -26,11 +29,12 @@ const Product = ({ product }) => {
           sx={{ fontSize: 8 }}
           gutterBottom
         >
-          {product.family}
+          {product.family} | {product.genus}
         </Typography>
         <Typography className={classes.productName} variant="h4">
           {product.name}
         </Typography>
+
         {nutritionVisibility && (
           <Typography className={classes.nutritions} variant="body2">
             <strong>Carbohydrates:</strong> {product.nutritions.carbohydrates}
@@ -51,7 +55,9 @@ const Product = ({ product }) => {
         <Button className={classes.showButton} onClick={toggleShowValues}>
           {!nutritionVisibility ? '+' : '-'} Nutrition Values
         </Button>
-        <IconButton>
+        <IconButton
+          onClick={() => handleAddItemToCart(product.id, product.name)}
+        >
           <AddShoppingCart color="primary" />
         </IconButton>
       </CardActions>
