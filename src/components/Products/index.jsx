@@ -12,6 +12,7 @@ const Products = ({ products }) => {
 
   return (
     <main className={classes.content}>
+      <ToastContainer position="bottom-right" />
       <Container align="center" gutterBottom>
         <Button
           component={Link}
@@ -25,7 +26,6 @@ const Products = ({ products }) => {
         </Button>
       </Container>
       <div className={classes.toolbar} />
-      <ToastContainer />
 
       {!products.length && (
         <Typography variant="h6" align="center">

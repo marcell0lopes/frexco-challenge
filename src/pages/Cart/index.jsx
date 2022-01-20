@@ -20,8 +20,9 @@ const Cart = () => {
 
   return (
     <main className={classes.content}>
+      <ToastContainer position="bottom-right" />
       <div className={classes.toolbar} />
-      <ToastContainer />
+
       {!cart.length ? (
         <Container>
           <Typography variant="h6" align="center">
