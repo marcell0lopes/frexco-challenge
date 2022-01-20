@@ -31,7 +31,7 @@ const Navbar = () => {
           >
             Frexco
           </Typography>
-          <div className={classes.navLinks}>
+          {/* <div className={classes.navLinks}>
             <Typography
               className={classes.navLink}
               component={Link}
@@ -50,7 +50,7 @@ const Navbar = () => {
             >
               Shopping Cart
             </Typography>
-          </div>
+          </div> */}
           {location.pathname === '/' && (
             <div>
               <IconButton

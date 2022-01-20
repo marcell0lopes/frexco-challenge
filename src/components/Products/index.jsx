@@ -1,17 +1,32 @@
 import React from 'react';
-import { Grid, Typography } from '@material-ui/core';
-import { ToastContainer, toast } from 'react-toastify';
+import { Button, Container, Grid, Typography } from '@material-ui/core';
+import { ToastContainer } from 'react-toastify';
 
 import useStyles from './styles.js';
 import Product from '../Product';
+import { ShoppingCartOutlined } from '@material-ui/icons';
+import { Link } from 'react-router-dom';
 
 const Products = ({ products }) => {
   const classes = useStyles();
 
   return (
     <main className={classes.content}>
+      <Container align="center" gutterBottom>
+        <Button
+          component={Link}
+          to="/cart"
+          size="small"
+          variant="contained"
+          color="secondary"
+          endIcon={<ShoppingCartOutlined fontSize="small" />}
+        >
+          Shopping Cart
+        </Button>
+      </Container>
       <div className={classes.toolbar} />
       <ToastContainer />
+
       {!products.length && (
         <Typography variant="h6" align="center">
           Loading Products...

@@ -13,8 +13,7 @@ import useStyles from './styles.js';
 
 const CartItem = ({ item }) => {
   const classes = useStyles();
-  const { handleRemoveItemFromCart, sumItemQty, handleAddItemToCart } =
-    useContext(CartContext);
+  const { handleRemoveItemFromCart, sumItemQty } = useContext(CartContext);
   return (
     <Card className={classes.cartItem}>
       <CardContent>
