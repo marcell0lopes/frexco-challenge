@@ -7,11 +7,27 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider, Container } from '@material-ui/core';
 import { CartProvider } from '../../contexts/CartContext';
 
+// resonse_object.header('Access-Control-Allow-Origin', '*');
+// resonse_object.header(
+//   'Access-Control-Allow-Headers',
+//   'Origin, X-Requested-With, Content-Type, Accept'
+// );
+
 const App = () => {
   const [products, setProducts] = useState([]);
 
   const fetchProduct = async () => {
-    const response = await fetch('https://www.fruityvice.com/api/fruit/all');
+    const response = await fetch(
+      'https://cors-anywhere.herokuapp.com/https://www.fruityvice.com/api/fruit/all',
+      {
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'DELETE, POST, GET, OPTIONS',
+          'Access-Control-Allow-Headers':
+            'Content-Type, Authorization, X-Requested-With',
+        },
+      }
+    );
     const data = await response.json();
     setProducts(data);
   };

@@ -13,7 +13,7 @@ const Products = ({ products }) => {
   return (
     <main className={classes.content}>
       <ToastContainer position="bottom-right" />
-      <Container align="center" gutterBottom>
+      <Container align="center">
         <Button
           component={Link}
           to="/cart"
