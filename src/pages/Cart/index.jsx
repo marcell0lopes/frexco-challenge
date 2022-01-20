@@ -12,6 +12,7 @@ import {
 import useStyles from './styles.js';
 import { CartContext } from '../../contexts/CartContext/index.js';
 import CartItem from '../../components/CartItem/index.jsx';
+import { ToastContainer } from 'react-toastify';
 
 const Cart = () => {
   const classes = useStyles();
@@ -20,6 +21,7 @@ const Cart = () => {
   return (
     <main className={classes.content}>
       <div className={classes.toolbar} />
+      <ToastContainer />
       {!cart.length ? (
         <Container>
           <Typography variant="h6" align="center">

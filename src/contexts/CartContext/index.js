@@ -1,9 +1,14 @@
-import { createContext, useState } from 'react';
+import React, { createContext, useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const CartContext = createContext({});
 
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
+
+  const notifySuccess = (string) => toast.success(string);
+  const notifyWarning = (string) => toast.warn(string);
 
   function handleAddItemToCart(item) {
     const newCart = cart;
@@ -11,12 +16,14 @@ export const CartProvider = ({ children }) => {
     item.qty = 1;
     newCart.push(item);
     setCart([...newCart]);
+    notifySuccess(`${item.name} added to cart`);
   }
 
   function sumItemQty(item) {
     const newCart = cart;
     item.qty++;
     setCart([...newCart]);
+    notifySuccess(`Added one ${item.name} to cart`);
   }
 
   function handleRemoveItemFromCart(item) {
@@ -29,10 +36,12 @@ export const CartProvider = ({ children }) => {
       newCart = cart.filter((i) => i !== item);
       setCart([...newCart]);
     }
+    notifyWarning(`Removed one ${item.name}`);
   }
 
   function clearCart() {
     setCart([]);
+    notifyWarning('Shopping Cart is now empty');
   }
 
   return (

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Grid, Typography } from '@material-ui/core';
+import { ToastContainer, toast } from 'react-toastify';
 
 import useStyles from './styles.js';
 import Product from '../Product';
@@ -10,6 +11,7 @@ const Products = ({ products }) => {
   return (
     <main className={classes.content}>
       <div className={classes.toolbar} />
+      <ToastContainer />
       {!products.length && (
         <Typography variant="h6" align="center">
           Loading Products...
