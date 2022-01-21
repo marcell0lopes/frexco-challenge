@@ -31,26 +31,6 @@ const Navbar = () => {
           >
             Frexco
           </Typography>
-          {/* <div className={classes.navLinks}>
-            <Typography
-              className={classes.navLink}
-              component={Link}
-              to="/"
-              variant="subtitle1"
-              sx={{ flexGrow: 1 }}
-            >
-              Produtos
-            </Typography>
-            <Typography
-              className={classes.navLink}
-              component={Link}
-              to="/cart"
-              variant="subtitle1"
-              sx={{ flexGrow: 1 }}
-            >
-              Shopping Cart
-            </Typography>
-          </div> */}
           {location.pathname === '/' && (
             <div>
               <IconButton
