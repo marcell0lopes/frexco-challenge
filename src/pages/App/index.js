@@ -12,7 +12,7 @@ const App = () => {
   const [products, setProducts] = useState([]);
   const fetchProduct = async () => {
     const response = await fetch(
-      'https://cors-anywhere.herokuapp.com/https://www.fruityvice.com/api/fruit/all',
+      'https://mycorsproxy666.herokuapp.com/https://www.fruityvice.com/api/fruit/all',
       {
         headers: {
           'Access-Control-Allow-Origin': '*',
